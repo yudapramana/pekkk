@@ -13,27 +13,10 @@
 
     <title>Pengumpulan Data Pembuatan Rekening CPPPK Tahun 2025</title>
 
-    <!-- Bootstrap core CSS -->
-    <link href="https://getbootstrap.com/docs/3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 
-    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
-    <link href="https://getbootstrap.com/docs/3.3/assets/css/ie10-viewport-bug-workaround.css" rel="stylesheet">
-
-    <!-- Custom styles for this template -->
-    {{--
-    <link href="https://getbootstrap.com/docs/3.3/examples/jumbotron-narrow/jumbotron-narrow.css" rel="stylesheet"> --}}
-
-    <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
-    <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
-    <script src="https://getbootstrap.com/docs/3.3/assets/js/ie-emulation-modes-warning.js"></script>
-
-    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
-    <!--[if lt IE 9]>
-      <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
-      <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
-    <![endif]-->
-
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script>
         $(document).ready(function() {
             var allowed = false;
@@ -105,35 +88,161 @@
                     <h3 class="nopadding nomargin" style="margin-top: 0 !important; margin-bottom:10px !important;">
                         Daftar Data</h3>
                 </div>
-                <table class="table" style="font-size: small!important;">
-                    <thead>
-                        <tr>
-                            <th>No</th>
-                            <th>Satuan Kerja</th>
-                            <th>Nama</th>
-                            <th>NIK</th>
-                            <th>Nomor HP</th>
-                            <th>Email</th>
-                            <th>Nama Ibu Kandung</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-
-                        @foreach ($peserta as $key => $item)
+                <div class="table-responsive">
+                    <table class="table table-bordered table-condensed table-striped table-hove" style="font-size: small!important;">
+                        <thead>
                             <tr>
-                                <th scope="row">{{ $key + 1 }}</th>
-                                <th>{{ $item->satuan_kerja }}</th>
-                                <th>{{ $item->nama }}</th>
-                                <td>{{ $item->nik }}</td>
-                                <td>{{ $item->nomor_hp }}</td>
-                                <td>{{ $item->email }}</td>
-                                <td>{{ Str::upper($item->nama_ibu_kandung) }}</td>
+                                <th>No</th>
+                                <th>Satuan Kerja</th>
+                                <th>Nama</th>
+                                <th>NIP</th>
+                                <th>NIK</th>
+                                <th>Jenis Kelamin</th>
+                                <th>Tempat Lahir</th>
+                                <th>Tanggal Lahir</th>
+                                <th>Agama</th>
+                                <th>Nama Ibu Kandung</th>
+                                <th>GDrive Link</th>
+                                <th>Nomor HP</th>
+                                <th>Email</th>
+                                <th>Alamat</th>
+                                <th>Kode Pos</th>
+                                <th>Jabatan</th>
+                                <th>Pendidikan</th>
+                                <th>Nomor NPWP</th>
+                                <th>Nomor KK</th>
+                                <th>Status Pernikahan</th>
+                                <th>Pasangan Nama</th>
+                                <th>Pasangan NIP</th>
+                                <th>Pasangan Tempat Lahir</th>
+                                <th>Pasangan Tanggal Lahir</th>
+                                <th>Pasangan Tanggal Nikah</th>
+                                <th>Pasangan NIK</th>
+                                <th>Pasangan Pekerjaan</th>
+                                <th>Pasangan Nama Ibu</th>
+                                <th>Pasangan Nama Ayah</th>
+                                <th>Pasangan Tertanggung</th>
+                                <th>Punya Anak</th>
+                                <!-- Anak 1 -->
+                                <th>Nama Anak 1</th>
+                                <th>Tempat Lahir Anak 1</th>
+                                <th>Tanggal Lahir Anak 1</th>
+                                <th>NIK Anak 1</th>
+                                <th>Pekerjaan Anak 1</th>
+                                <th>Nama Ayah Anak 1</th>
+                                <th>Nama Ibu Anak 1</th>
+                                <th>Tertanggung Anak 1</th>
+                                <!-- Anak 2 -->
+                                <th>Nama Anak 2</th>
+                                <th>Tempat Lahir Anak 2</th>
+                                <th>Tanggal Lahir Anak 2</th>
+                                <th>NIK Anak 2</th>
+                                <th>Pekerjaan Anak 2</th>
+                                <th>Nama Ayah Anak 2</th>
+                                <th>Nama Ibu Anak 2</th>
+                                <th>Tertanggung Anak 2</th>
+                                <!-- Anak 3 -->
+                                <th>Nama Anak 3</th>
+                                <th>Tempat Lahir Anak 3</th>
+                                <th>Tanggal Lahir Anak 3</th>
+                                <th>NIK Anak 3</th>
+                                <th>Pekerjaan Anak 3</th>
+                                <th>Nama Ayah Anak 3</th>
+                                <th>Nama Ibu Anak 3</th>
+                                <th>Tertanggung Anak 3</th>
+                                <!-- Anak 4 -->
+                                <th>Nama Anak 4</th>
+                                <th>Tempat Lahir Anak 4</th>
+                                <th>Tanggal Lahir Anak 4</th>
+                                <th>NIK Anak 4</th>
+                                <th>Pekerjaan Anak 4</th>
+                                <th>Nama Ayah Anak 4</th>
+                                <th>Nama Ibu Anak 4</th>
+                                <th>Tertanggung Anak 4</th>
                             </tr>
-                        @endforeach
+                        </thead>
+                        <tbody>
+                            @foreach ($peserta as $key => $item)
+                                <tr>
+                                    <td>{{ $key + 1 }}</td>
+                                    <td>{{ $item->satuan_kerja }}</td>
+                                    <td>{{ $item->nama }}</td>
+                                    <td>{{ $item->nip }}</td>
+                                    <td>{{ $item->nik ?? '-' }}</td>
+                                    <td>{{ $item->jenis_kelamin }}</td>
+                                    <td>{{ $item->tempat_lahir ?? '-' }}</td>
+                                    <td>{{ $item->tanggal_lahir ? \Carbon\Carbon::parse($item->tanggal_lahir)->format('d-m-Y') : '-' }}</td>
+                                    <td>{{ $item->agama }}</td>
+                                    <td>{{ Str::upper($item->nama_ibu_kandung ?? '-') }}</td>
+                                    <td>
+                                        @if ($item->gdrive_link)
+                                            <a href="{{ $item->gdrive_link }}" target="_blank">Link</a>
+                                        @else
+                                            -
+                                        @endif
+                                    </td>
+                                    <td>{{ $item->nomor_hp ?? '-' }}</td>
+                                    <td>{{ $item->email ?? '-' }}</td>
+                                    <td>{{ $item->alamat ?? '-' }}</td>
+                                    <td>{{ $item->kode_pos ?? '-' }}</td>
+                                    <td>{{ $item->jabatan }}</td>
+                                    <td>{{ $item->pendidikan }}</td>
+                                    <td>{{ $item->nomor_npwp ?? '-' }}</td>
+                                    <td>{{ $item->nomor_kk ?? '-' }}</td>
+                                    <td>{{ $item->status_pernikahan }}</td>
+                                    <td>{{ $item->pasangan_nama ?? '-' }}</td>
+                                    <td>{{ $item->pasangan_nip ?? '-' }}</td>
+                                    <td>{{ $item->pasangan_tempat_lahir ?? '-' }}</td>
+                                    <td>{{ $item->pasangan_tanggal_lahir ? \Carbon\Carbon::parse($item->pasangan_tanggal_lahir)->format('d-m-Y') : '-' }}</td>
+                                    <td>{{ $item->pasangan_tanggal_nikah ? \Carbon\Carbon::parse($item->pasangan_tanggal_nikah)->format('d-m-Y') : '-' }}</td>
+                                    <td>{{ $item->pasangan_nik ?? '-' }}</td>
+                                    <td>{{ $item->pasangan_pekerjaan ?? '-' }}</td>
+                                    <td>{{ $item->pasangan_nama_ibu ?? '-' }}</td>
+                                    <td>{{ $item->pasangan_nama_ayah ?? '-' }}</td>
+                                    <td>{{ $item->pasangan_tertanggung ? 'Ya' : 'Tidak' }}</td>
+                                    <td>{{ $item->punya_anak ? 'Ya' : 'Tidak' }}</td>
+                                    <!-- Anak 1 -->
+                                    <td>{{ $item->nama_anak_1 ?? '-' }}</td>
+                                    <td>{{ $item->tempat_lahir_anak_1 ?? '-' }}</td>
+                                    <td>{{ $item->tanggal_lahir_anak_1 ? \Carbon\Carbon::parse($item->tanggal_lahir_anak_1)->format('d-m-Y') : '-' }}</td>
+                                    <td>{{ $item->nik_anak_1 ?? '-' }}</td>
+                                    <td>{{ $item->pekerjaan_anak_1 ?? '-' }}</td>
+                                    <td>{{ $item->nama_ayah_anak_1 ?? '-' }}</td>
+                                    <td>{{ $item->nama_ibu_anak_1 ?? '-' }}</td>
+                                    <td>{{ $item->tertanggung_anak_1 ?? '-' }}</td>
+                                    <!-- Anak 2 -->
+                                    <td>{{ $item->nama_anak_2 ?? '-' }}</td>
+                                    <td>{{ $item->tempat_lahir_anak_2 ?? '-' }}</td>
+                                    <td>{{ $item->tanggal_lahir_anak_2 ? \Carbon\Carbon::parse($item->tanggal_lahir_anak_2)->format('d-m-Y') : '-' }}</td>
+                                    <td>{{ $item->nik_anak_2 ?? '-' }}</td>
+                                    <td>{{ $item->pekerjaan_anak_2 ?? '-' }}</td>
+                                    <td>{{ $item->nama_ayah_anak_2 ?? '-' }}</td>
+                                    <td>{{ $item->nama_ibu_anak_2 ?? '-' }}</td>
+                                    <td>{{ $item->tertanggung_anak_2 ?? '-' }}</td>
+                                    <!-- Anak 3 -->
+                                    <td>{{ $item->nama_anak_3 ?? '-' }}</td>
+                                    <td>{{ $item->tempat_lahir_anak_3 ?? '-' }}</td>
+                                    <td>{{ $item->tanggal_lahir_anak_3 ? \Carbon\Carbon::parse($item->tanggal_lahir_anak_3)->format('d-m-Y') : '-' }}</td>
+                                    <td>{{ $item->nik_anak_3 ?? '-' }}</td>
+                                    <td>{{ $item->pekerjaan_anak_3 ?? '-' }}</td>
+                                    <td>{{ $item->nama_ayah_anak_3 ?? '-' }}</td>
+                                    <td>{{ $item->nama_ibu_anak_3 ?? '-' }}</td>
+                                    <td>{{ $item->tertanggung_anak_3 ?? '-' }}</td>
+                                    <!-- Anak 4 -->
+                                    <td>{{ $item->nama_anak_4 ?? '-' }}</td>
+                                    <td>{{ $item->tempat_lahir_anak_4 ?? '-' }}</td>
+                                    <td>{{ $item->tanggal_lahir_anak_4 ? \Carbon\Carbon::parse($item->tanggal_lahir_anak_4)->format('d-m-Y') : '-' }}</td>
+                                    <td>{{ $item->nik_anak_4 ?? '-' }}</td>
+                                    <td>{{ $item->pekerjaan_anak_4 ?? '-' }}</td>
+                                    <td>{{ $item->nama_ayah_anak_4 ?? '-' }}</td>
+                                    <td>{{ $item->nama_ibu_anak_4 ?? '-' }}</td>
+                                    <td>{{ $item->tertanggung_anak_4 ?? '-' }}</td>
+                                </tr>
+                            @endforeach
+                        </tbody>
+                    </table>
 
-
-                    </tbody>
-                </table>
+                </div>
 
             </div>
 
